@@ -1,16 +1,61 @@
-# React + Vite
+# React Task Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A task management application built with React. It allows users to create, edit, complete, and delete tasks, with persistent storage using localStorage.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Create new tasks
+* Mark tasks as completed
+* Edit tasks inline
+* Delete tasks
+* Persistent data with localStorage
+* Component-based architecture
 
-## React Compiler
+## 🛠️ Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* JavaScript (ES6+)
+* HTML & CSS
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+components/
+TaskInput.jsx
+TaskList.jsx
+TaskItem.jsx
+App.jsx
+main.jsx
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/react-task-tracker.git
+cd react-task-tracker
+npm install
+npm run dev
+```
+
+## 🧠 What I learned
+
+* State management with useState
+* Side effects with useEffect
+* Component separation and props handling
+* Handling CRUD operations in the UI
+* Persisting data with localStorage
+
+## 🔗 Backend (optional version)
+
+This project can be connected to a backend API:
+https://github.com/your-username/tasks-api
+
+## 📌 Future Improvements
+
+* Connect to a backend API
+* Add task filtering (all / completed / pending)
+* Improve UI/UX design
+* Add authentication
+
+## 📄 License
+
+This project is open-source and available for learning purposes.
