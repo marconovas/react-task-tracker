@@ -30,7 +30,7 @@ main.jsx
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your-username/react-task-tracker.git
+git clone https://github.com/marconovas/react-task-tracker.git
 cd react-task-tracker
 npm install
 npm run dev
@@ -47,7 +47,7 @@ npm run dev
 ## 🔗 Backend (optional version)
 
 This project can be connected to a backend API:
-https://github.com/your-username/tasks-api
+https://github.com/marconovas/tasks-api
 
 ## 📌 Future Improvements
 
