@@ -5,13 +5,14 @@ function TaskItem ({ task, toggleTasks, deleteTask, editTask }) {
     const [editText, setEditText] = useState("");
 
     function handleEdit(){
+        setEditText(task.title);
         setIsEditing(true);
     }
 
-    function handleSave() {
+    async function handleSave() {
         if(editText.trim() === "") return;
 
-        editTask(task.id, editText);
+        await editTask(task.id, editText);
         setIsEditing(false);
     }
 
@@ -28,7 +29,7 @@ function TaskItem ({ task, toggleTasks, deleteTask, editTask }) {
             </>
         ) : (
             <>
-                {task.text}
+                {task.title}
                 <input 
                     type="checkbox"
                     checked={task.completed} 
