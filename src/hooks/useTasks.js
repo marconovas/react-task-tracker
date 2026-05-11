@@ -27,7 +27,19 @@ export function useTasks () {
     
         fetchTasks();
     }, []);
+
+    //task counter
+    const totalTasks = tasks.length;
     
+    const completedTasks = tasks.filter(
+      task => task.completed
+    ).length;
+    
+    const pendingTasks = tasks.filter(
+      task => !task.completed
+    ).length;
+
+    //filter
     const filteredTasks = tasks.filter(task => {
       if(filter === "completed") return task.completed;
       if(filter === "pending") return !task.completed;
@@ -91,6 +103,9 @@ export function useTasks () {
     
     return {
         tasks,
+        totalTasks,
+        completedTasks,
+        pendingTasks,
         input, 
         isLoading,
         filteredTasks,
