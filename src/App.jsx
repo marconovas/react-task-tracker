@@ -2,10 +2,14 @@ import { useTasks } from "./hooks/useTasks";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import TaskFilter from "./components/TaskFilter";
+import TaskCounter from "./components/TaskCounter";
 
 function App() {
   const {
-    tasks, 
+    tasks,
+    totalTasks,
+    completedTasks,
+    pendingTasks,
     isLoading,
     input,
     filteredTasks,
@@ -23,6 +27,8 @@ function App() {
   return (
     <div>
       <h1>Task Tracker</h1>
+
+      <TaskCounter total={totalTasks} completed={completedTasks} pending={pendingTasks} />
 
       <TaskInput input={input} setInput={setInput} handleTask={addTask}/>
 
