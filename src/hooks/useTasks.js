@@ -10,6 +10,7 @@ export function useTasks () {
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+    const [filter, setFilter] = useState("all");
 
     useEffect(() => {
         async function fetchTasks() {
@@ -27,6 +28,14 @@ export function useTasks () {
         fetchTasks();
     }, []);
     
+    const filteredTasks = tasks.filter(task => {
+      if(filter === "completed") return task.completed;
+      if(filter === "pending") return !task.completed;
+
+      return true;
+    })
+
+    //CRUD
     async function addTask() {
         if(input.trim() === "") return;
     
@@ -84,6 +93,8 @@ export function useTasks () {
         tasks,
         input, 
         isLoading,
+        filteredTasks,
+        setFilter,
         setInput,
         addTask,
         editTask,

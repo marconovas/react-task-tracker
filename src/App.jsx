@@ -1,12 +1,15 @@
 import { useTasks } from "./hooks/useTasks";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
+import TaskFilter from "./components/TaskFilter";
 
 function App() {
   const {
     tasks, 
     isLoading,
     input,
+    filteredTasks,
+    setFilter,
     addTask,
     toggleTask,
     setInput,
@@ -23,11 +26,13 @@ function App() {
 
       <TaskInput input={input} setInput={setInput} handleTask={addTask}/>
 
+      <TaskFilter setFilter={setFilter}/>
+
       {
         tasks.length === 0 ? (
           <h2>No hay tareas actualmente</h2>
-        ) : (
-          <TaskList tasks={tasks} toggleTasks={toggleTask} deleteTask={deleteTask} editTask={editTask}/>
+        ) : (          
+          <TaskList tasks={filteredTasks} toggleTasks={toggleTask} deleteTask={deleteTask} editTask={editTask}/>
         )
       }
 
