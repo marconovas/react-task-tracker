@@ -16,6 +16,16 @@ function TaskItem ({ task, toggleTasks, deleteTask, editTask }) {
         setIsEditing(false);
     }
 
+    function handleDelete () {
+        const confirm = window.confirm(
+            "¿Seguro quieres eliminar esta tarea?"
+        );
+
+        if(confirm){
+            deleteTask(task.id)
+        }
+    }
+
     return (
     <li>
         {isEditing ? (
@@ -36,7 +46,9 @@ function TaskItem ({ task, toggleTasks, deleteTask, editTask }) {
                     onChange={() => toggleTasks(task.id)}
                 />
                 <button onClick={handleEdit}>Editar</button>
-                <button type="button" onClick={() => deleteTask(task.id)}>Eliminar</button>
+                <button type="button" onClick={handleDelete}>
+                    Eliminar
+                </button>
             </>
         )}
     </li>
